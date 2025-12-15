@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</head>
+<body class="bg-[#0A0A12]">
+     <div id="welcome-container" class="flex flex-col justify-around items-center bg-[#141421] p-4 border-none border-2 w-[600px] h-[630px] mx-auto my-50 rounded-2xl shadow-4xl">
+
+        <h2 class="text-center text-blue-700 font-bold text-[28px]">
+            Welcome to the quiz world !!!
+        </h2>
+
+        <p class="text-center text-blue-500 text-[19px] font-semibold">Attend all the quiz carefully to score high marks</p>
+        <ul class="text-blue-300 text-[16px] space-y-2 list-disc ml-7 font-medium">
+            <li>Select your Round Type: Rapid Round: 10 seconds per question (or) Normal Round: 20 seconds per question</li>
+            <li>Each question has only one correct answer.</li>
+            <li>Once the timer ends, the quiz will automatically move to the next question.</li>
+            <li>You must select an option before clicking the Next button.</li>
+            <li>After finishing all questions, your final score and performance message will be displayed.</li>
+            <li>Do not refresh or leave the page during the quiz.</li>
+            <li>Stay focused — the timer cannot be paused.</li>
+        </ul>
+
+        <div id="roundtype" class="flex gap-x-50">
+            <button id="rapid" class="bg-[#5B5FFF]  hover:scale-105 border-none duration-350 text-[#E6EDF3] cursor-pointer border-2 rounded-2xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0D1117]">Rapid Fire</button>
+            <button id="normal" class="bg-[#5B5FFF]  hover:scale-105 border-none duration-350 text-[#E6EDF3] cursor-pointer border-2 rounded-2xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0D1117]">Normal Round</button>
+        </div>
+        
+        <button id="start" class="bg-[#3360ff]  hover:scale-105 border-none duration-350 text-[#E6EDF3] cursor-pointer border-2 rounded-2xl px-4 py-2">Start Quiz</button>
+    </div>
+    <div id="quiz-container" class="hidden flex flex-col justify-around  bg-[#141421] p-4 border-none border-2 w-[500px] h-[530px] mx-auto my-50 rounded-2xl shadow-2xl">
+        <div id="timerBox" class="text-center my-4">
+            <span class="text-white text-xl font-bold">Time Left: </span>
+            <span id="timer" class="text-yellow-400 text-2xl font-extrabold">0</span>
+            <span class="text-white text-xl font-bold">s</span>
+        </div>
+
+        <div class="space-y-2 text-gray-300">
+            <h2 class="font-bold text-[20px]">Simple JS Quiz</h2>
+            <p class="font-light text-[14px]">Question <span id="question-no"></span> of 10</p>
+        </div>
+
+        <div>
+            <h2 id="questions" class="text-gray-300"></h2>
+        </div>
+
+        <div id="options" class="space-y-2 ml-1 text-gray-300">
+            <p class="option duration-350 bg-[#5b6f88] rounded-lg p-2"></p>
+            <p class="option duration-350 bg-[#5b6f88] rounded-lg p-2"></p>
+            <p class="option duration-350 bg-[#5b6f88] rounded-lg p-2"></p>
+            <p class="option duration-350 bg-[#5b6f88] rounded-lg p-2"></p>
+        </div>
+
+        <div>
+            <p id="err-display" class="text-red-300 ml-2"></p>
+        </div>
+
+        <div class = "flex justify-between">
+            <button id="nxtbtn" class="bg-[#3360ff] hover:scale-105 border-none duration-350 text-[#E6EDF3] cursor-pointer border-2 rounded-2xl px-4 ml-100 py-2">Next</button>
+        </div>
+    </div>
+
+    <div id="score-container" class="hidden flex flex-col justify-around items-center bg-[#141421] p-4 border-none border-2 w-[500px] h-[530px] mx-auto my-50 rounded-2xl shadow-2xl">
+        <h2 class="text-center text-blue-500 font-bold text-[20px]">
+            You have successfully completed your JavaScript Quiz !!!
+        </h2>
+        <p id="score" class="text-center text-blue-300 text-[18px] font-semibold"></p>
+        <p id="greet" class="text-center text-blue-300 text-[18px] font-semibold"></p>
+        <button onclick="location.reload()" class="bg-[#3360ff]  hover:scale-105 border-none duration-350 text-[#E6EDF3] cursor-pointer border-2 rounded-2xl px-4 py-2">Restart Quiz</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
